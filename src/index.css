@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+
+/* Hide Google top banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+/* Hide default dropdown */
+.goog-te-combo {
+  display: none !important;
+}
+
+/* Remove injected highlight */
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}
+
+:root {
+  /* Primary Colors - Deep Red Theme */
+  --color-primary: #fe3b3b;
+  --color-primary-2: #9900001a;
+  --color-secondary: #663535;
+  --color-accent: #ffd700;
+  --color-accent-base: #b8860b;
+  --color-base: #fff4bd;
+
+  /* Backgrounds - Warm & Clean */
+  --bg-main: #fffdf5;
+  --bg-card: #ffffff;
+  --bg-soft: #edffe6;
+
+  /* Text - High Contrast */
+  --text-primary: #1a1a1a;
+  --text-secondary: #475569;
+  --text-light: #94a3b8;
+  /* Status */
+  --success: #22c55e;
+  --error: #ef4444;
+  --border: #e2e8f0;
+
+  /* Radius */
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+
+  /* Shadow */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+:root {
+  /* =====================================
+       FONT FAMILY SYSTEM
+       ===================================== */
+  --ff-primary: "Poppins", sans-serif;
+  --ff-secondary: "Inter", sans-serif;
+  --ff-accent: "Montserrat", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+  --ff-nunito: "Nunito", sans-serif;
+
+  /* =====================================
+       FONT WEIGHT SYSTEM
+       ===================================== */
+  /* --fw-light: 300;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700; */
+
+  --fw-light: clamp(300, 0.5vw + 400, 450);
+  --fw-regular: clamp(400, 0.5vw + 400, 450);
+  --fw-medium: clamp(500, 0.5vw + 500, 550);
+  --fw-semibold: clamp(600, 0.5vw + 600, 650);
+  --fw-bold: clamp(700, 0.5vw + 700, 750);
+
+  /* =====================================
+       FONT STYLE SYSTEM
+       ===================================== */
+  --fs-style-normal: normal;
+  --fs-style-italic: italic;
+
+  /* =====================================
+       MOBILE FONT SCALE (Default / 0px – 767px)
+       ===================================== */
+  /* --fs-h1: 32px;
+  --fs-h2: 28px;
+  --fs-h3: 24px;
+  --fs-h4: 20px;
+  --fs-h5: 18px;
+  --fs-h6: 16px;
+
+  --fs-body: 14px;
+  --fs-small: 14px;
+  --fs-caption: 12px; */
+
+  /* Base Scale (Fluid) */
+  --fs-caption: clamp(0.7rem, 0.8vw, 0.75rem);
+  /* ~11px → 12px */
+  --fs-small: clamp(0.85rem, 1vw, 0.875rem);
+  /* ~13px → 14px */
+  --fs-body: clamp(0.95rem, 1.2vw, 1rem);
+  /* ~15px → 16px */
+  --fs-large: clamp(1rem, 1.5vw, 1.125rem);
+  /* ~16px → 18px */
+
+  /* Headings (Balanced & Not Oversized) */
+  --fs-h6: clamp(0.875rem, 1vw, 0.95rem);
+  /* 14px → 15px */
+  --fs-h5: clamp(1rem, 1.3vw, 1.125rem);
+  /* 16px → 18px */
+  --fs-h4: clamp(1.1rem, 1.6vw, 1.25rem);
+  /* 18px → 20px */
+  --fs-h3: clamp(1.25rem, 2vw, 1.5rem);
+  /* 20px → 24px */
+  --fs-h2: clamp(1.5rem, 2.5vw, 1.75rem);
+  /* 24px → 28px */
+  --fs-h1: clamp(1.8rem, 3vw, 2.2rem);
+  /* 29px → 35px */
+
+}
+
+/* =====================================
+   TABLET FONT SCALE (768px – 1023px)
+   ===================================== */
+/* @media (min-width: 768px) {
+  :root {
+    --fs-h1: 40px;
+    --fs-h2: 32px;
+    --fs-h3: 28px;
+    --fs-h4: 24px;
+    --fs-h5: 20px;
+    --fs-h6: 18px;
+
+    --fs-body: 16px;
+    --fs-small: 14px;
+    --fs-caption: 12px;
+  }
+} */
+
+/* =====================================
+   DESKTOP FONT SCALE (1024px – 1535px)
+   ===================================== */
+/* @media (min-width: 1024px) {
+  :root {
+    --fs-h1: 56px;
+    --fs-h2: 40px;
+    --fs-h3: 32px;
+    --fs-h4: 28px;
+    --fs-h5: 24px;
+    --fs-h6: 20px;
+
+    --fs-body: 16px;
+    --fs-small: 14px;
+    --fs-caption: 12px;
+  }
+} */
+
+/* =====================================
+   LARGE DESKTOP FONT SCALE (1536px+)
+   ===================================== */
+/* @media (min-width: 1536px) {
+  :root {
+    --fs-h1: 64px;
+    --fs-h2: 48px;
+    --fs-h3: 36px;
+    --fs-h4: 30px;
+    --fs-h5: 24px;
+    --fs-h6: 20px;
+
+    --fs-body: 18px;
+    --fs-small: 16px;
+    --fs-caption: 14px;
+  }
+} */
+
+/* Foooter */
+
+@keyframes lubDub {
+  0% {
+    transform: scale(1) rotate(3deg);
+  }
+
+  15% {
+    transform: scale(1.15) rotate(3deg);
+  }
+
+  30% {
+    transform: scale(1) rotate(3deg);
+  }
+
+  45% {
+    transform: scale(1.2) rotate(3deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(3deg);
+  }
+}
+
+.lub-dub-animation {
+  animation: lubDub 1.2s ease-in-out infinite;
+}
+
+.logo-container:hover {
+  animation-play-state: paused;
+  /* Optional: pause pulse on hover */
+  box-shadow: 0 0 20px var(--color-base);
+  border-color: var(--color-accent) !important;
+}
+
+/* global.css or chat.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* in your CSS */
+main {
+  padding-top: 50px;
+  /* same as navbar height */
+}
+
+/* 
+form fill for story post  */
+
+@layer components {
+  .form-input-custom {
+    @apply w-full px-4 py-3 bg-white border border-[var(--border)] rounded-[var(--radius-sm)] focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent outline-none transition-all text-[var(--text-primary)] placeholder:text-[var(--text-light)];
+  }
+}
+
+/* .goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0px !important;
+} */
+
+
+/* Hide Google top banner */
+.goog-te-banner-frame,
+.goog-te-ftab,
+iframe.skiptranslate {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Hide top banner */
+.goog-te-banner-frame {
+  display: none !important;
+}
+
+/* Hide bottom feedback bar */
+.goog-te-ftab {
+  display: none !important;
+}
+
+/* Prevent body shift */
+body {
+  top: 0px !important;
+}
+
+/* Hide translate tooltip */
+.goog-tooltip,
+.goog-tooltip:hover {
+  display: none !important;
+}
