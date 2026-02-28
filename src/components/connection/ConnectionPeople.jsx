@@ -1,5 +1,5 @@
 // src/components/private/profile/ConnectionPage.jsx
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Heart,
@@ -83,14 +83,28 @@ const ConnectionPage = () => {
     setFilteredInterests(filtered);
   }, [searchQuery, receivedInterests]);
 
+  // const handleAccept = async (profile) => {
+  //   const result = await acceptInterest(profile.id);
+
+  //   if (result.success) {
+  //     setMatchedName(profile.fullName);
+  //     setShowMatchAnim(true);
+  //     // Play a "ding" sound here if you have one!
+  //     setTimeout(() => setShowMatchAnim(false), 3000); // Hide after 3 seconds
+  //   }
+  // };
+
   const handleAccept = async (profile) => {
+    console.log("Accepting:", profile.id);
+
     const result = await acceptInterest(profile.id);
 
-    if (result.success) {
+    console.log("Result:", result);
+
+    if (result?.success) {
       setMatchedName(profile.fullName);
       setShowMatchAnim(true);
-      // Play a "ding" sound here if you have one!
-      setTimeout(() => setShowMatchAnim(false), 3000); // Hide after 3 seconds
+      setTimeout(() => setShowMatchAnim(false), 3000);
     }
   };
 
@@ -244,13 +258,23 @@ const ConnectionPage = () => {
                       {/* DYNAMIC BUTTON LOGIC */}
                       <button
                         onClick={async () => {
-                          const chatId = await createChatSession(
-                            user.uid,
-                            profile.id,
-                          );
-                          isMatch
-                            ? navigate(`/chat/${chatId}`)
-                            : handleAccept(profile);
+                          // const chatId = await createChatSession(
+                          //   user.uid,
+                          //   profile.id,
+                          // );
+                          // isMatch
+                          //   ? navigate(`/chat/${chatId}`)
+                          //   : handleAccept(profile);
+
+                          if (isMatch) {
+                            const chatId = await createChatSession(
+                              user.uid,
+                              profile.id,
+                            );
+                            navigate(`/chat/${chatId}`);
+                          } else {
+                            handleAccept(profile);
+                          }
                         }}
                         className={`flex-1 py-3 rounded-xl text-white text-[10px] font-black uppercase tracking-widest shadow-lg transition-all ${
                           isMatch
